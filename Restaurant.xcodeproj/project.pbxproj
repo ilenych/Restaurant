@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		970529FF2374811B0003C88D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970529FE2374811B0003C88D /* Preview Assets.xcassets */; };
 		97052A022374811B0003C88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97052A002374811B0003C88D /* LaunchScreen.storyboard */; };
 		97052A0A237481430003C88D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97052A09237481430003C88D /* AuthViewController.swift */; };
+		97AF104023749B3E00223657 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF103F23749B3E00223657 /* LoginViewController.swift */; };
+		97AF104223749FC900223657 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97AF104123749FC900223657 /* LoginViewController.storyboard */; };
 		B3928A8A79FB0A22C130C2C8 /* Pods_Restaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FB0D94966D017B1B6DA9C /* Pods_Restaurant.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		97052A012374811B0003C88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97052A032374811B0003C88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97052A09237481430003C88D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		97AF103F23749B3E00223657 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		97AF104123749FC900223657 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		A952EF2CB55586A5C016BA75 /* Pods-Restaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurant.release.xcconfig"; path = "Target Support Files/Pods-Restaurant/Pods-Restaurant.release.xcconfig"; sourceTree = "<group>"; };
 		B57B5A7ADB182B7A24AAFCCA /* Pods-Restaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurant.debug.xcconfig"; path = "Target Support Files/Pods-Restaurant/Pods-Restaurant.debug.xcconfig"; sourceTree = "<group>"; };
 		E99FB0D94966D017B1B6DA9C /* Pods_Restaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Restaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +62,6 @@
 				B57B5A7ADB182B7A24AAFCCA /* Pods-Restaurant.debug.xcconfig */,
 				A952EF2CB55586A5C016BA75 /* Pods-Restaurant.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +89,8 @@
 				970529F5237481190003C88D /* AppDelegate.swift */,
 				970529F7237481190003C88D /* SceneDelegate.swift */,
 				97052A09237481430003C88D /* AuthViewController.swift */,
+				97AF103F23749B3E00223657 /* LoginViewController.swift */,
+				97AF104123749FC900223657 /* LoginViewController.storyboard */,
 				970529F9237481190003C88D /* ContentView.swift */,
 				970529FB2374811B0003C88D /* Assets.xcassets */,
 				97052A002374811B0003C88D /* LaunchScreen.storyboard */,
@@ -164,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97052A022374811B0003C88D /* LaunchScreen.storyboard in Resources */,
+				97AF104223749FC900223657 /* LoginViewController.storyboard in Resources */,
 				970529FF2374811B0003C88D /* Preview Assets.xcassets in Resources */,
 				970529FC2374811B0003C88D /* Assets.xcassets in Resources */,
 			);
@@ -221,6 +227,7 @@
 				97052A0A237481430003C88D /* AuthViewController.swift in Sources */,
 				970529F6237481190003C88D /* AppDelegate.swift in Sources */,
 				970529F8237481190003C88D /* SceneDelegate.swift in Sources */,
+				97AF104023749B3E00223657 /* LoginViewController.swift in Sources */,
 				970529FA237481190003C88D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +370,7 @@
 				DEVELOPMENT_TEAM = 5XJBTP6G53;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Restaurant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,6 +392,7 @@
 				DEVELOPMENT_TEAM = 5XJBTP6G53;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Restaurant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

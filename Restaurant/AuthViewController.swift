@@ -14,9 +14,9 @@ class AuthViewController: UIViewController {
     fileprivate let loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Вход", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next-Bold", size: 16)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28)
         button.setTitleColor(.white, for: .normal)
-        //        button.addTarget(self, action: Selector.didTapLoginButton, for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         button.backgroundColor = #colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1)
         button.layer.cornerRadius = 40
         button.clipsToBounds = true
@@ -26,7 +26,7 @@ class AuthViewController: UIViewController {
     fileprivate let signupButton: UIButton = {
         let button = UIButton()
         button.setTitle("Регистрация", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next-Bold", size: 16)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28)
         button.setTitleColor(.black, for: .normal)
         //           button.addTarget(self, action: Selector.didTapSignupButton, for: .touchUpInside)
         button.backgroundColor = .white
@@ -37,11 +37,11 @@ class AuthViewController: UIViewController {
     
     fileprivate let imageView: UIImageView = {
         let iv = UIImageView(frame: .zero)
-//        iv.translatesAutoresizingMaskIntoConstraints = false
+        //        iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "base")
-//        iv.clipsToBounds = true
-//        iv.layer.cornerRadius = 12
+        //        iv.clipsToBounds = true
+        //        iv.layer.cornerRadius = 12
         return iv
     }()
     
@@ -50,7 +50,7 @@ class AuthViewController: UIViewController {
         view.backgroundColor = .black
         setupSignupButton()
         setupLoginButton()
-        setuoImageView()
+        setupImageView()
     }
     
     fileprivate func setupLoginButton() {
@@ -58,8 +58,8 @@ class AuthViewController: UIViewController {
         loginButton.snp.makeConstraints { (make) in
             make.width.equalTo(view.frame.width - 60)
             make.height.equalTo(view.frame.width / 5)
-            make.bottom.equalTo(signupButton.snp.top).offset(-30) // To do
-            make.leading.equalTo(30)
+            make.bottom.equalTo(signupButton.snp.top).offset(-30) 
+            make.centerX.equalTo(view.snp.centerX)
         }
     }
     
@@ -68,12 +68,12 @@ class AuthViewController: UIViewController {
         signupButton.snp.makeConstraints { (make) in
             make.width.equalTo(view.frame.width - 60)
             make.height.equalTo(view.frame.width / 5)
-            make.bottom.equalTo(view.frame.height / -9) // To do
-            make.trailing.equalTo(-30)
+            make.bottom.equalTo(view.frame.height / -9)
+            make.centerX.equalTo(view.snp.centerX)
         }
     }
     
-    fileprivate func setuoImageView() {
+    fileprivate func setupImageView() {
         view.addSubview(imageView)
         imageView.snp.makeConstraints { (make) in
             make.width.equalTo(view.frame.width)
@@ -82,6 +82,14 @@ class AuthViewController: UIViewController {
             make.bottom.equalTo(loginButton.snp.top).offset(-10)
         }
     }
+    
+     @objc func didTapLoginButton() {
+          let storyBoard = UIStoryboard(name: "LoginViewController", bundle: nil)
+          let loginVC = storyBoard.instantiateViewController(withIdentifier: String(describing: LoginViewController.self)) as! LoginViewController
+          loginVC.modalTransitionStyle = .crossDissolve
+          loginVC.modalPresentationStyle = .overCurrentContext
+          self.present(loginVC, animated: true, completion: nil)
+      }
 }
 
 
