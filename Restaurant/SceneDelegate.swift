@@ -2,7 +2,6 @@
 //  SceneDelegate.swift
 //  Restaurant
 //
-//  Created by  SENAT on 07.11.2019.
 //  Copyright © 2019 <ASi. All rights reserved.
 //
 
