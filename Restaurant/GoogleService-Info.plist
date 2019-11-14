@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>70128264297-u5olu9ho14gnqiqb8lfcjqahg27hok9v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.70128264297-u5olu9ho14gnqiqb8lfcjqahg27hok9v</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDs6umJvhxQ95g2vc-pBI6LdVAi0shtU28</string>
+	<key>GCM_SENDER_ID</key>
+	<string>70128264297</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>-ASi.Restaurant</string>
+	<key>PROJECT_ID</key>
+	<string>lubov-9e954</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lubov-9e954.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:70128264297:ios:02347d712f4a482e926ef8</string>
+	<key>DATABASE_URL</key>
+	<string>https://lubov-9e954.firebaseio.com</string>
+</dict>
+</plist>
