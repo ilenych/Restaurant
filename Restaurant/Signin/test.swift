@@ -1,4 +1,14 @@
 //
+//  test.swift
+//  Restaurant
+//
+//  Created by  SENAT on 20.11.2019.
+//  Copyright © 2019 <ASi. All rights reserved.
+//
+
+import Foundation
+
+//
 //  AuthViewController.swift
 //  Restaurant
 //
@@ -10,10 +20,14 @@ import UIKit
 import SnapKit
 import Firebase
 
+protocol AuthViewProtocol: class {
+    
+}
+
 class AuthViewController: UIViewController {
     //MARK: - Variables
     
-    private var router: RouterProtocol!
+    var presenter: AuthPresenterProtocol!
     
     fileprivate lazy var loginButton: UIButton = {
         let b = UIButton()
@@ -51,9 +65,6 @@ class AuthViewController: UIViewController {
         //view config
         view.backgroundColor = .black
         
-        //Router
-        router = Routers(viewController: self)
-        
         //setup
         setupSignupButton()
         setupLoginButton()
@@ -66,17 +77,30 @@ class AuthViewController: UIViewController {
     fileprivate func addStateDidChangeListener() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                self.router.openMainViewController()
+                let storyBoard = UIStoryboard(name: "MainViewController", bundle: nil)
+                let MainVC = storyBoard.instantiateViewController(withIdentifier: String(describing: MainViewController.self)) as! MainViewController
+                MainVC.modalTransitionStyle = .crossDissolve
+                MainVC.modalPresentationStyle = .overCurrentContext
+                self.present(MainVC, animated: true, completion: nil)
             }
         }
     }
     
     @objc func didTapLoginButton() {
-        router.openLoginViewController()
+        
+        let loginViewController: LoginViewController = LoginViewController()
+        loginViewController.modalTransitionStyle = .crossDissolve
+        loginViewController.modalPresentationStyle = .overCurrentContext
+        
+        self.present(loginViewController, animated: true, completion: nil)
     }
     
     @objc func didTapSignupButton() {
-        router.openSigninViewController()
+        let signinViewController: SigninViewController = SigninViewController()
+        signinViewController.modalTransitionStyle = .crossDissolve
+        signinViewController.modalPresentationStyle = .overCurrentContext
+        
+        self.present(signinViewController, animated: true, completion: nil)
     }
     
     //MARK: - Setup
@@ -109,6 +133,11 @@ class AuthViewController: UIViewController {
             make.bottom.equalTo(loginButton.snp.top).offset(-10)
         }
     }
+}
+
+//MARK: - AuthViewProtocol
+extension AuthViewController: AuthViewProtocol {
+    
 }
 
 //MARK: - Canvas

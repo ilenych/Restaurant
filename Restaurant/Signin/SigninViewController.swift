@@ -12,6 +12,7 @@ import Firebase
 
 class SigninViewController: UIViewController {
     //MARK: - Variables
+    private var router: RouterProtocol!
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
     fileprivate lazy var scrollView: UIScrollView = {
@@ -84,6 +85,9 @@ class SigninViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(containerView)
         
+        //Router
+        router = Routers(viewController: self)
+        
         //Setup
         setupSigninButton()
         setupEmailView()
@@ -112,11 +116,7 @@ class SigninViewController: UIViewController {
                 }
                 
                 if user != nil {
-                    let storyBoard = UIStoryboard(name: "MainViewController", bundle: nil)
-                    let MainVC = storyBoard.instantiateViewController(withIdentifier: String(describing: MainViewController.self)) as! MainViewController
-                    MainVC.modalTransitionStyle = .crossDissolve
-                    MainVC.modalPresentationStyle = .overCurrentContext
-                    self.present(MainVC, animated: true, completion: nil)
+                    self.router.openMainViewController()
                     return
                 }
                 
@@ -201,7 +201,7 @@ class SigninViewController: UIViewController {
     }
 }
 
-//MARK: - Extension
+//MARK: - UITextFieldDelegate
 extension SigninViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

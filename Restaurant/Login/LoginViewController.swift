@@ -12,6 +12,8 @@ import Firebase
 
 class LoginViewController: UIViewController {
     //MARK: - Variables
+    var router: RouterProtocol!
+    
     fileprivate let imageView: UIImageView = {
         let iv = UIImageView(frame: .zero)
         iv.contentMode = .scaleAspectFit
@@ -57,6 +59,9 @@ class LoginViewController: UIViewController {
         //view config
         view.backgroundColor = .black
         
+        //Router
+        router = Routers(viewController: self)
+        
         //setup
         setupEmailView()
         setupPasswordView()
@@ -66,23 +71,21 @@ class LoginViewController: UIViewController {
     
     //MARK: - Functions
     @objc func didTapLoginButton() {
-         guard let email = emailView.textField.text, let password = passwordView.textField.text, email != "", password != "" else { print("Error in enter" ); return }
-         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-             if error != nil {
-                 print("Error")
-             }
-             
-             if user != nil {
-                 let storyBoard = UIStoryboard(name: "MainViewController", bundle: nil)
-                 let MainVC = storyBoard.instantiateViewController(withIdentifier: String(describing: MainViewController.self)) as! MainViewController
-                 MainVC.modalTransitionStyle = .crossDissolve
-                 MainVC.modalPresentationStyle = .overCurrentContext
-                 self.present(MainVC, animated: true, completion: nil)
-                 return
-             }
-             print("No such user")
-         }
-     }
+        guard let email = emailView.textField.text,
+            let password = passwordView.textField.text,
+            email != "", password != "" else { print("Error in enter" ); return }
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                print("Error")
+            }
+            
+            if user != nil {
+                self.router.openMainViewController()
+                return
+            }
+            print("No such user")
+        }
+    }
     
     //MARK: - Setup
     fileprivate func setupImageView() {
@@ -126,7 +129,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-//MARK: - Extension
+//MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
