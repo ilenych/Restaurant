@@ -7,38 +7,129 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="zyh-Bg-Gsx">
+        <!--Contacts View Controller-->
+        <scene sceneID="mPQ-f0-k9L">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="7OK-tv-1lv" customClass="MainViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="T1L-0a-ziw">
+                <viewController id="HCc-g8-mZT" customClass="ContactsViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nYG-oC-lyn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro4-fo-9Dy">
-                                <rect key="frame" x="85.5" y="412.5" width="243" height="81"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQS-Ot-3J6">
+                                <rect key="frame" x="66" y="141" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-Oa-Cdr">
+                                <rect key="frame" x="77" y="274" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Phone"/>
+                                <connections>
+                                    <action selector="callButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="cMZ-Qb-i0G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0k-Ef-lJt">
+                                <rect key="frame" x="310" y="274" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="vk"/>
+                                <connections>
+                                    <action selector="vkButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="Nm5-qJ-gDk"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6R-Zl-3oO">
+                                <rect key="frame" x="65" y="189" width="240" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyH-Y8-0Zx">
+                                <rect key="frame" x="199" y="274" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="insta"/>
+                                <connections>
+                                    <action selector="instagramButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="dmy-dl-HUU"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-r0-oK2">
+                                <rect key="frame" x="20" y="384" width="350" height="366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адресс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-C5-eym">
+                                <rect key="frame" x="67" y="338" width="239" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FVN-CG-7Af"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="ldh-vT-xeV">
+                        <color key="badgeColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="iDf-C5-eym" id="oBE-DI-IIb"/>
+                        <outlet property="descriptionLabel" destination="ZQS-Ot-3J6" id="pFy-oA-Knk"/>
+                        <outlet property="imageView" destination="V6R-Zl-3oO" id="Ldb-FP-7as"/>
+                        <outlet property="mapView" destination="fa1-r0-oK2" id="P8V-OF-G3v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mdj-dk-rlF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1662.3188405797102" y="440.625"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="9j4-Qp-miy">
+            <objects>
+                <viewController id="ONb-X4-QHg" customClass="MainViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yq9-UC-gH0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlS-2k-KYB">
+                                <rect key="frame" x="85.5" y="388" width="243" height="81"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="81" id="7PM-BT-X2x"/>
-                                    <constraint firstAttribute="width" constant="243" id="h02-5g-gNX"/>
+                                    <constraint firstAttribute="width" constant="243" id="Ttp-Dt-Pkn"/>
+                                    <constraint firstAttribute="height" constant="81" id="zqH-vZ-q8x"/>
                                 </constraints>
                                 <state key="normal" title="Sign out"/>
                                 <connections>
-                                    <action selector="signoutButtonAction:" destination="7OK-tv-1lv" eventType="touchUpInside" id="1ie-r9-mLp"/>
+                                    <action selector="signoutButtonAction:" destination="ONb-X4-QHg" eventType="touchUpInside" id="as9-xL-uRi"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ro4-fo-9Dy" firstAttribute="centerX" secondItem="PG0-fb-9IB" secondAttribute="centerX" id="50A-kF-L13"/>
-                            <constraint firstItem="ro4-fo-9Dy" firstAttribute="centerY" secondItem="PG0-fb-9IB" secondAttribute="centerY" id="NWU-8s-tuJ"/>
+                            <constraint firstItem="wlS-2k-KYB" firstAttribute="centerY" secondItem="9ec-vg-AI8" secondAttribute="centerY" id="nRm-v8-bQm"/>
+                            <constraint firstItem="wlS-2k-KYB" firstAttribute="centerX" secondItem="9ec-vg-AI8" secondAttribute="centerX" id="p2w-wE-cK3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PG0-fb-9IB"/>
+                        <viewLayoutGuide key="safeArea" id="9ec-vg-AI8"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="oEG-c9-X9r"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zc3-fY-F5i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9p-Za-WLy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.565217391304358" y="145.98214285714286"/>
+            <point key="canvasLocation" x="1663" y="-207"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="PcL-zq-6cb">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eeZ-eL-HQY" customClass="MainTabBarController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q9g-li-Drl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ONb-X4-QHg" kind="relationship" relationship="viewControllers" id="8Dz-M4-gWW"/>
+                        <segue destination="HCc-g8-mZT" kind="relationship" relationship="viewControllers" id="1Ms-kG-h4i"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iv-EX-tcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744" y="117"/>
         </scene>
     </scenes>
 </document>

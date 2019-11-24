@@ -77,6 +77,25 @@ class SigninViewController: UIViewController {
         return v
     }()
     
+    fileprivate let loginLabel: UILabel = {
+        let l = UILabel()
+        l.text = "Уже зарегистированы?"
+        l.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        l.textAlignment = .center
+        l.textColor = .white
+        return l
+    }()
+    
+    fileprivate lazy var loginButton: UIButton = {
+        let b = UIButton()
+        b.setTitle("Войти", for: .normal)
+        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        b.setTitleColor(#colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1), for: .normal)
+        b.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        b.backgroundColor = .clear
+        return b
+    }()
+    
     //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,12 +113,16 @@ class SigninViewController: UIViewController {
         setupImageView()
         setupPasswordView()
         setupConfirmPasswordView()
+        setupLoginLabel()
+        setupLoginButton()
         
         //Notification
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
+    
+    //FIXME: - keyboard ( сделать правильное отображение клавитуры, чтобы не закрывало другие элементы на экранк) + same in LoginViewController
     
     //MARK: - Functions
     @objc func didTapSigninButton() {
@@ -126,6 +149,10 @@ class SigninViewController: UIViewController {
             alertControllerError()
             //TODO: animatiom
         }
+    }
+    
+    @objc func didTapLoginButton() {
+        router.openLoginViewController()
     }
     
     fileprivate func alertControllerError() {
@@ -160,16 +187,6 @@ class SigninViewController: UIViewController {
         }
     }
     
-    fileprivate func setupSigninButton() {
-        containerView.addSubview(signinButton)
-        signinButton.snp.makeConstraints { (make) in
-            make.width.equalTo(containerView.frame.width - 60)
-            make.height.equalTo(containerView.frame.width / 5)
-            make.centerX.equalTo(containerView.snp.centerX)
-            make.bottom.equalTo(containerView.frame.width / -9)
-        }
-    }
-    
     fileprivate func setupEmailView() {
         containerView.addSubview(emailView)
         emailView.snp.makeConstraints { (make) in
@@ -197,6 +214,36 @@ class SigninViewController: UIViewController {
             make.height.equalTo(containerView.frame.width / 6)
             make.top.equalTo(passwordView.snp.bottom).offset(30)
             make.centerX.equalTo(containerView.snp.centerX)
+        }
+    }
+    
+    fileprivate func setupLoginLabel() {
+        containerView.addSubview(loginLabel)
+        loginLabel.snp.makeConstraints { (make) in
+            make.width.equalTo(containerView.frame.width - 60)
+            make.height.equalTo(containerView.frame.width / 10)
+            make.top.equalTo(confirmPasswordView.snp.bottom).offset(10)
+            make.centerX.equalTo(containerView.snp.centerX)
+        }
+    }
+    
+    fileprivate func setupLoginButton() {
+        containerView.addSubview(loginButton)
+        loginButton.snp.makeConstraints { (make) in
+            make.width.equalTo(containerView.frame.width - 60)
+            make.height.equalTo(containerView.frame.width / 10)
+            make.top.equalTo(loginLabel.snp.bottom)
+            make.centerX.equalTo(containerView.snp.centerX)
+        }
+    }
+    
+    fileprivate func setupSigninButton() {
+        containerView.addSubview(signinButton)
+        signinButton.snp.makeConstraints { (make) in
+            make.width.equalTo(containerView.frame.width - 60)
+            make.height.equalTo(containerView.frame.width / 5)
+            make.centerX.equalTo(containerView.snp.centerX)
+            make.bottom.equalTo(containerView.frame.width / -9)
         }
     }
 }

@@ -41,7 +41,7 @@ extension Routers: RouterProtocol {
     
     func openMainViewController() {
         let storyBoard = UIStoryboard(name: "MainViewController", bundle: nil)
-        let MainVC = storyBoard.instantiateViewController(withIdentifier: String(describing: MainViewController.self)) as! MainViewController
+        let MainVC = storyBoard.instantiateViewController(withIdentifier: String(describing: MainTabBarController.self)) as! MainTabBarController
         MainVC.modalTransitionStyle = .crossDissolve
         MainVC.modalPresentationStyle = .overCurrentContext
         

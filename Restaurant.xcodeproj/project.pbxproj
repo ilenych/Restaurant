@@ -20,6 +20,12 @@
 		97898906237ACD9D00C384FC /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97898905237ACD9D00C384FC /* SigninViewController.swift */; };
 		9789890B237C8A5E00C384FC /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789890A237C8A5E00C384FC /* TextFieldView.swift */; };
 		97A793C8238571710015FE60 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793C7238571700015FE60 /* Routers.swift */; };
+		97A793CC238599060015FE60 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793CB238599060015FE60 /* MainTabBarController.swift */; };
+		97A793CF23859AD90015FE60 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793CE23859AD90015FE60 /* ContactsViewController.swift */; };
+		97A793D12385A73E0015FE60 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793D02385A73E0015FE60 /* ContactsPresenter.swift */; };
+		97A793D32385A74C0015FE60 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793D22385A74C0015FE60 /* ContactsInteractor.swift */; };
+		97A793D52385A7610015FE60 /* ContactsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793D42385A7610015FE60 /* ContactsConfigurator.swift */; };
+		97A793D7238692E90015FE60 /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793D6238692E90015FE60 /* ContactsRouter.swift */; };
 		97AF104023749B3E00223657 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF103F23749B3E00223657 /* LoginViewController.swift */; };
 		B3928A8A79FB0A22C130C2C8 /* Pods_Restaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FB0D94966D017B1B6DA9C /* Pods_Restaurant.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +46,12 @@
 		97898905237ACD9D00C384FC /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		9789890A237C8A5E00C384FC /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		97A793C7238571700015FE60 /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
+		97A793CB238599060015FE60 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		97A793CE23859AD90015FE60 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		97A793D02385A73E0015FE60 /* ContactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
+		97A793D22385A74C0015FE60 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
+		97A793D42385A7610015FE60 /* ContactsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsConfigurator.swift; sourceTree = "<group>"; };
+		97A793D6238692E90015FE60 /* ContactsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRouter.swift; sourceTree = "<group>"; };
 		97AF103F23749B3E00223657 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A952EF2CB55586A5C016BA75 /* Pods-Restaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurant.release.xcconfig"; path = "Target Support Files/Pods-Restaurant/Pods-Restaurant.release.xcconfig"; sourceTree = "<group>"; };
 		B57B5A7ADB182B7A24AAFCCA /* Pods-Restaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurant.debug.xcconfig"; path = "Target Support Files/Pods-Restaurant/Pods-Restaurant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,12 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				970529F5237481190003C88D /* AppDelegate.swift */,
-				97A793C7238571700015FE60 /* Routers.swift */,
 				970529F7237481190003C88D /* SceneDelegate.swift */,
+				97A793C7238571700015FE60 /* Routers.swift */,
 				97898909237C85C200C384FC /* Auth */,
 				97898904237ACD4400C384FC /* Signin */,
 				978988E6237882AF00C384FC /* Login */,
 				978988FD2379AAC000C384FC /* Main */,
+				97A793CD23859A490015FE60 /* Contacts */,
 				9789890C237C8B0000C384FC /* Views */,
 				970529F9237481190003C88D /* ContentView.swift */,
 				970529FB2374811B0003C88D /* Assets.xcassets */,
@@ -133,6 +146,7 @@
 		978988FD2379AAC000C384FC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				97A793CB238599060015FE60 /* MainTabBarController.swift */,
 				978988FB2379AAB900C384FC /* MainViewController.swift */,
 				978988FE2379AAD400C384FC /* MainViewController.storyboard */,
 			);
@@ -161,6 +175,18 @@
 				9789890A237C8A5E00C384FC /* TextFieldView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		97A793CD23859A490015FE60 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				97A793CE23859AD90015FE60 /* ContactsViewController.swift */,
+				97A793D02385A73E0015FE60 /* ContactsPresenter.swift */,
+				97A793D22385A74C0015FE60 /* ContactsInteractor.swift */,
+				97A793D42385A7610015FE60 /* ContactsConfigurator.swift */,
+				97A793D6238692E90015FE60 /* ContactsRouter.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				97052A0A237481430003C88D /* AuthViewController.swift in Sources */,
+				97A793D12385A73E0015FE60 /* ContactsPresenter.swift in Sources */,
+				97A793D32385A74C0015FE60 /* ContactsInteractor.swift in Sources */,
+				97A793CF23859AD90015FE60 /* ContactsViewController.swift in Sources */,
 				97A793C8238571710015FE60 /* Routers.swift in Sources */,
 				970529F6237481190003C88D /* AppDelegate.swift in Sources */,
 				9789890B237C8A5E00C384FC /* TextFieldView.swift in Sources */,
@@ -288,7 +317,10 @@
 				97AF104023749B3E00223657 /* LoginViewController.swift in Sources */,
 				970529FA237481190003C88D /* ContentView.swift in Sources */,
 				978988FC2379AAB900C384FC /* MainViewController.swift in Sources */,
+				97A793CC238599060015FE60 /* MainTabBarController.swift in Sources */,
 				97898906237ACD9D00C384FC /* SigninViewController.swift in Sources */,
+				97A793D52385A7610015FE60 /* ContactsConfigurator.swift in Sources */,
+				97A793D7238692E90015FE60 /* ContactsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

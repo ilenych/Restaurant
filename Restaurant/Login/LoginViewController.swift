@@ -53,6 +53,25 @@ class LoginViewController: UIViewController {
         return v
     }()
     
+    fileprivate let signinLabel: UILabel = {
+        let l = UILabel()
+        l.text = "Нет аккаунта?"
+        l.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        l.textAlignment = .center
+        l.textColor = .white
+        return l
+    }()
+    
+    fileprivate lazy var signinButton: UIButton = {
+        let b = UIButton()
+        b.setTitle("Зарегистрироваться", for: .normal)
+        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        b.setTitleColor(#colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1), for: .normal)
+        b.addTarget(self, action: #selector(didTapSigninButton), for: .touchUpInside)
+        b.backgroundColor = .clear
+        return b
+    }()
+    
     //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +86,8 @@ class LoginViewController: UIViewController {
         setupPasswordView()
         setupLoginButton()
         setupImageView()
+        setupSigninLabel()
+        setupSigninButton()
     }
     
     //MARK: - Functions
@@ -87,6 +108,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @objc func didTapSigninButton() {
+        router.openSigninViewController()
+    }
+    
     //MARK: - Setup
     fileprivate func setupImageView() {
         view.addSubview(imageView)
@@ -95,16 +120,6 @@ class LoginViewController: UIViewController {
             make.height.equalTo(80)
             make.centerX.equalTo(view.snp.centerX)
             make.bottom.equalTo(emailView.snp.top).offset(-50)
-        }
-    }
-    
-    fileprivate func setupLoginButton() {
-        view.addSubview(loginButton)
-        loginButton.snp.makeConstraints { (make) in
-            make.width.equalTo(view.frame.width - 60)
-            make.height.equalTo(view.frame.width / 5)
-            make.top.equalTo(passwordView.snp.bottom).offset(110)
-            make.centerX.equalTo(view.snp.centerX)
         }
     }
     
@@ -127,6 +142,35 @@ class LoginViewController: UIViewController {
             make.centerX.equalTo(view.snp.centerX)
         }
     }
+    fileprivate func setupSigninLabel() {
+        view.addSubview(signinLabel)
+        signinLabel.snp.makeConstraints { (make) in
+            make.width.equalTo(view.frame.width - 60)
+            make.height.equalTo(view.frame.width / 10)
+            make.top.equalTo(passwordView.snp.bottom).offset(20)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+    }
+    
+    fileprivate func setupSigninButton() {
+        view.addSubview(signinButton)
+        signinButton.snp.makeConstraints { (make) in
+            make.width.equalTo(view.frame.width - 60)
+            make.height.equalTo(view.frame.width / 10)
+            make.top.equalTo(signinLabel.snp.bottom)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+    }
+    
+     fileprivate func setupLoginButton() {
+         view.addSubview(loginButton)
+         loginButton.snp.makeConstraints { (make) in
+             make.width.equalTo(view.frame.width - 60)
+             make.height.equalTo(view.frame.width / 5)
+             make.bottom.equalTo(view.frame.width / -9)
+             make.centerX.equalTo(view.snp.centerX)
+         }
+     }
 }
 
 //MARK: - UITextFieldDelegate
