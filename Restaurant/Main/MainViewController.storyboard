@@ -15,58 +15,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQS-Ot-3J6">
-                                <rect key="frame" x="66" y="141" width="82" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-Oa-Cdr">
-                                <rect key="frame" x="77" y="274" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Phone"/>
-                                <connections>
-                                    <action selector="callButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="cMZ-Qb-i0G"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0k-Ef-lJt">
-                                <rect key="frame" x="310" y="274" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="vk"/>
-                                <connections>
-                                    <action selector="vkButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="Nm5-qJ-gDk"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6R-Zl-3oO">
-                                <rect key="frame" x="65" y="189" width="240" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyH-Y8-0Zx">
-                                <rect key="frame" x="199" y="274" width="33" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="insta"/>
-                                <connections>
-                                    <action selector="instagramButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="dmy-dl-HUU"/>
-                                </connections>
-                            </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-r0-oK2">
-                                <rect key="frame" x="20" y="384" width="350" height="366"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адресс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-C5-eym">
-                                <rect key="frame" x="67" y="338" width="239" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-SS-7hg">
+                                <rect key="frame" x="20" y="44" width="374" height="749"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EBZ-eu-Twv">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="log" translatesAutoresizingMaskIntoConstraints="NO" id="V6R-Zl-3oO">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="58" id="9x4-15-MRe"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aRP-rU-Gca">
+                                        <rect key="frame" x="138.5" y="74" width="97" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ZQS-Ot-3J6">
+                                                <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="dpx-tD-2OB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="51" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-ir-lRE">
+                                        <rect key="frame" x="46" y="120" width="282" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-Oa-Cdr">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="GFB-hq-eZ1"/>
+                                                    <constraint firstAttribute="width" secondItem="FFI-Oa-Cdr" secondAttribute="height" multiplier="1:1" id="b3j-oF-hzp"/>
+                                                </constraints>
+                                                <state key="normal" image="Call"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="callButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="cMZ-Qb-i0G"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyH-Y8-0Zx">
+                                                <rect key="frame" x="111" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="EyH-Y8-0Zx" secondAttribute="height" multiplier="1:1" id="DG2-Qj-799"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="cFn-wz-Jhg"/>
+                                                </constraints>
+                                                <state key="normal" image="instagram"/>
+                                                <connections>
+                                                    <action selector="instagramButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="dmy-dl-HUU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0k-Ef-lJt">
+                                                <rect key="frame" x="222" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Z0k-Ef-lJt" secondAttribute="height" multiplier="1:1" id="06g-1A-ydE"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="g0g-5J-wJN"/>
+                                                </constraints>
+                                                <state key="normal" image="iconfinder_vkontakte_386743"/>
+                                                <connections>
+                                                    <action selector="vkButtonAction:" destination="HCc-g8-mZT" eventType="touchUpInside" id="Nm5-qJ-gDk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P8y-IY-kV1">
+                                        <rect key="frame" x="0.0" y="196" width="374" height="507"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-r0-oK2">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="507"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="1O1-V7-a8F"/>
+                                                    <constraint firstAttribute="width" constant="374" id="ct7-Qh-62y"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="delegate" destination="HCc-g8-mZT" id="JQF-3o-mB7"/>
+                                                </connections>
+                                            </mapView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uJe-nA-NDo">
+                                        <rect key="frame" x="158.5" y="719" width="57.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адресс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-C5-eym">
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="NSe-5s-Axb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pyz-SS-7hg" firstAttribute="top" secondItem="FVN-CG-7Af" secondAttribute="top" id="5pl-Ih-y4J"/>
+                            <constraint firstItem="FVN-CG-7Af" firstAttribute="trailing" secondItem="pyz-SS-7hg" secondAttribute="trailing" constant="20" id="Uec-c9-cIC"/>
+                            <constraint firstItem="pyz-SS-7hg" firstAttribute="leading" secondItem="FVN-CG-7Af" secondAttribute="leading" constant="20" id="UrK-Rd-o8i"/>
+                            <constraint firstItem="FVN-CG-7Af" firstAttribute="bottom" secondItem="pyz-SS-7hg" secondAttribute="bottom" constant="20" id="k3d-SE-scd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FVN-CG-7Af"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="ldh-vT-xeV">
-                        <color key="badgeColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="addressLabel" destination="iDf-C5-eym" id="oBE-DI-IIb"/>
@@ -99,6 +164,10 @@
                                     <action selector="signoutButtonAction:" destination="ONb-X4-QHg" eventType="touchUpInside" id="as9-xL-uRi"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cqx-hb-U77">
+                                <rect key="frame" x="104" y="136" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -111,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9p-Za-WLy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="-207"/>
+            <point key="canvasLocation" x="1662.3188405797102" y="-207.58928571428569"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="PcL-zq-6cb">
@@ -132,4 +201,10 @@
             <point key="canvasLocation" x="744" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Call" width="512" height="512"/>
+        <image name="iconfinder_vkontakte_386743" width="64" height="64"/>
+        <image name="instagram" width="512" height="512"/>
+        <image name="log" width="1116" height="130"/>
+    </resources>
 </document>

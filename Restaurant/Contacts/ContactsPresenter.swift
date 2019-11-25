@@ -8,7 +8,9 @@
 import Foundation
 
 struct ContactsData {
+    let name: String?
     let descriptionText: String?
+    let location: String?
 }
 
 protocol ContactsPresenterProtocol: class {
@@ -52,8 +54,12 @@ extension ContactsPresenter: ContactsPresenterProtocol {
 //MARK: - ContactsInteractorOutputProtocol
 extension ContactsPresenter: ContactsInteractorOutputProtocol {
     func recieveContacts(contactsData: ContactsData) {
-        guard let description = contactsData.descriptionText else { return }
+        guard let description = contactsData.descriptionText,
+        let name = contactsData.name,
+        let location = contactsData.location else { return }
         view.setDescription(with: description)
+        view.setupPlacemark(name: name, location: location)
+        view.setupAddress(with: location)
     }
     
     
