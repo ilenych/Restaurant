@@ -23,7 +23,7 @@ class ContactsViewController: UIViewController {
     var presenter: ContactsPresenterProtocol!
     private let configurator: ContactsConfiguratorProtocol = ContactsConfigurator()
     
-    let annotationIdentifier = "annotationIdentifier" // delete this line
+    private let annotationIdentifier = "annotationIdentifier" 
     
     override func viewDidLoad() {
         super.viewDidLoad()

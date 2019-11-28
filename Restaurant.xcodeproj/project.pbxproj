@@ -14,6 +14,9 @@
 		970529FF2374811B0003C88D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970529FE2374811B0003C88D /* Preview Assets.xcassets */; };
 		97052A022374811B0003C88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97052A002374811B0003C88D /* LaunchScreen.storyboard */; };
 		97052A0A237481430003C88D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97052A09237481430003C88D /* AuthViewController.swift */; };
+		975485DB23902699008F041C /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975485DA23902699008F041C /* MenuCollectionViewController.swift */; };
+		975485DD239026FC008F041C /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975485DC239026FC008F041C /* MenuCollectionViewCell.swift */; };
+		977DB98123903A41007FF1A2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98023903A41007FF1A2 /* Menu.swift */; };
 		978988FC2379AAB900C384FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978988FB2379AAB900C384FC /* MainViewController.swift */; };
 		978988FF2379AAD400C384FC /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978988FE2379AAD400C384FC /* MainViewController.storyboard */; };
 		978989032379FA7200C384FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 978989022379FA7200C384FC /* GoogleService-Info.plist */; };
@@ -40,6 +43,9 @@
 		97052A012374811B0003C88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97052A032374811B0003C88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97052A09237481430003C88D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		975485DA23902699008F041C /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
+		975485DC239026FC008F041C /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		977DB98023903A41007FF1A2 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		978988FB2379AAB900C384FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		978988FE2379AAD400C384FC /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		978989022379FA7200C384FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				97898904237ACD4400C384FC /* Signin */,
 				978988E6237882AF00C384FC /* Login */,
 				978988FD2379AAC000C384FC /* Main */,
+				97A793F8238C30DE0015FE60 /* Menu */,
 				97A793CD23859A490015FE60 /* Contacts */,
 				9789890C237C8B0000C384FC /* Views */,
 				970529F9237481190003C88D /* ContentView.swift */,
@@ -187,6 +194,16 @@
 				97A793D6238692E90015FE60 /* ContactsRouter.swift */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		97A793F8238C30DE0015FE60 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				975485DA23902699008F041C /* MenuCollectionViewController.swift */,
+				975485DC239026FC008F041C /* MenuCollectionViewCell.swift */,
+				977DB98023903A41007FF1A2 /* Menu.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,13 +324,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				97052A0A237481430003C88D /* AuthViewController.swift in Sources */,
+				975485DB23902699008F041C /* MenuCollectionViewController.swift in Sources */,
 				97A793D12385A73E0015FE60 /* ContactsPresenter.swift in Sources */,
 				97A793D32385A74C0015FE60 /* ContactsInteractor.swift in Sources */,
 				97A793CF23859AD90015FE60 /* ContactsViewController.swift in Sources */,
 				97A793C8238571710015FE60 /* Routers.swift in Sources */,
+				977DB98123903A41007FF1A2 /* Menu.swift in Sources */,
 				970529F6237481190003C88D /* AppDelegate.swift in Sources */,
 				9789890B237C8A5E00C384FC /* TextFieldView.swift in Sources */,
 				970529F8237481190003C88D /* SceneDelegate.swift in Sources */,
+				975485DD239026FC008F041C /* MenuCollectionViewCell.swift in Sources */,
 				97AF104023749B3E00223657 /* LoginViewController.swift in Sources */,
 				970529FA237481190003C88D /* ContentView.swift in Sources */,
 				978988FC2379AAB900C384FC /* MainViewController.swift in Sources */,
