@@ -2,7 +2,6 @@
 //  MenuCollectionViewController.swift
 //  Restaurant
 //
-//  Created by  SENAT on 28.11.2019.
 //  Copyright © 2019 <ASi. All rights reserved.
 //
 
@@ -12,30 +11,35 @@ private let reuseIdentifier = "Cell"
 
 class MenuCollectionViewController: UICollectionViewController {
     
-    var itemMenuArray: [Menu] = {
-        var menu = Menu()
-        menu.imageString = "menu2"
-        
-        var menu2 = Menu()
-        menu2.imageString = "email"
-        return [menu, menu2]
-        
-    }()
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var menu = [Menu]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //setup activity indicator
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        //fetch local json
+        LocalService.fethData { (menu) in
+            self.menu = menu
+        }
     }
+    
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemMenuArray.count
+        return menu.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MenuCollectionViewCell
-    
-        cell.menu = itemMenuArray[indexPath.row]
-    
+        //TODO: - Work with cache in the future
+        DispatchQueue.main.async {
+            NetworkService.shared.downloadImage(menuPage: self.menu[indexPath.row].page,
+                                                imageView: cell.menuImageView,
+                                                activityIndicator: self.activityIndicator)
+        }
         return cell
     }
 }
@@ -45,4 +49,15 @@ extension MenuCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
+
+

@@ -16,7 +16,10 @@
 		97052A0A237481430003C88D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97052A09237481430003C88D /* AuthViewController.swift */; };
 		975485DB23902699008F041C /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975485DA23902699008F041C /* MenuCollectionViewController.swift */; };
 		975485DD239026FC008F041C /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975485DC239026FC008F041C /* MenuCollectionViewCell.swift */; };
-		977DB98123903A41007FF1A2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98023903A41007FF1A2 /* Menu.swift */; };
+		977DB98623915955007FF1A2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98523915955007FF1A2 /* NetworkService.swift */; };
+		977DB98823916E4F007FF1A2 /* resource.json in Resources */ = {isa = PBXBuildFile; fileRef = 977DB98723916E4F007FF1A2 /* resource.json */; };
+		977DB98A23916E92007FF1A2 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98923916E92007FF1A2 /* LocalService.swift */; };
+		977DB98C23916EE8007FF1A2 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98B23916EE8007FF1A2 /* MenuModel.swift */; };
 		978988FC2379AAB900C384FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978988FB2379AAB900C384FC /* MainViewController.swift */; };
 		978988FF2379AAD400C384FC /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978988FE2379AAD400C384FC /* MainViewController.storyboard */; };
 		978989032379FA7200C384FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 978989022379FA7200C384FC /* GoogleService-Info.plist */; };
@@ -45,7 +48,10 @@
 		97052A09237481430003C88D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		975485DA23902699008F041C /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
 		975485DC239026FC008F041C /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
-		977DB98023903A41007FF1A2 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		977DB98523915955007FF1A2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		977DB98723916E4F007FF1A2 /* resource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resource.json; sourceTree = "<group>"; };
+		977DB98923916E92007FF1A2 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		977DB98B23916EE8007FF1A2 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		978988FB2379AAB900C384FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		978988FE2379AAD400C384FC /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		978989022379FA7200C384FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 			children = (
 				970529F5237481190003C88D /* AppDelegate.swift */,
 				970529F7237481190003C88D /* SceneDelegate.swift */,
+				977DB98523915955007FF1A2 /* NetworkService.swift */,
+				977DB98923916E92007FF1A2 /* LocalService.swift */,
 				97A793C7238571700015FE60 /* Routers.swift */,
 				97898909237C85C200C384FC /* Auth */,
 				97898904237ACD4400C384FC /* Signin */,
@@ -127,6 +135,7 @@
 				970529F9237481190003C88D /* ContentView.swift */,
 				970529FB2374811B0003C88D /* Assets.xcassets */,
 				97052A002374811B0003C88D /* LaunchScreen.storyboard */,
+				977DB98723916E4F007FF1A2 /* resource.json */,
 				978989022379FA7200C384FC /* GoogleService-Info.plist */,
 				97052A032374811B0003C88D /* Info.plist */,
 				970529FD2374811B0003C88D /* Preview Content */,
@@ -201,7 +210,7 @@
 			children = (
 				975485DA23902699008F041C /* MenuCollectionViewController.swift */,
 				975485DC239026FC008F041C /* MenuCollectionViewCell.swift */,
-				977DB98023903A41007FF1A2 /* Menu.swift */,
+				977DB98B23916EE8007FF1A2 /* MenuModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 				970529FF2374811B0003C88D /* Preview Assets.xcassets in Resources */,
 				970529FC2374811B0003C88D /* Assets.xcassets in Resources */,
 				978988FF2379AAD400C384FC /* MainViewController.storyboard in Resources */,
+				977DB98823916E4F007FF1A2 /* resource.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,17 +337,19 @@
 				975485DB23902699008F041C /* MenuCollectionViewController.swift in Sources */,
 				97A793D12385A73E0015FE60 /* ContactsPresenter.swift in Sources */,
 				97A793D32385A74C0015FE60 /* ContactsInteractor.swift in Sources */,
+				977DB98A23916E92007FF1A2 /* LocalService.swift in Sources */,
 				97A793CF23859AD90015FE60 /* ContactsViewController.swift in Sources */,
 				97A793C8238571710015FE60 /* Routers.swift in Sources */,
-				977DB98123903A41007FF1A2 /* Menu.swift in Sources */,
 				970529F6237481190003C88D /* AppDelegate.swift in Sources */,
 				9789890B237C8A5E00C384FC /* TextFieldView.swift in Sources */,
+				977DB98623915955007FF1A2 /* NetworkService.swift in Sources */,
 				970529F8237481190003C88D /* SceneDelegate.swift in Sources */,
 				975485DD239026FC008F041C /* MenuCollectionViewCell.swift in Sources */,
 				97AF104023749B3E00223657 /* LoginViewController.swift in Sources */,
 				970529FA237481190003C88D /* ContentView.swift in Sources */,
 				978988FC2379AAB900C384FC /* MainViewController.swift in Sources */,
 				97A793CC238599060015FE60 /* MainTabBarController.swift in Sources */,
+				977DB98C23916EE8007FF1A2 /* MenuModel.swift in Sources */,
 				97898906237ACD9D00C384FC /* SigninViewController.swift in Sources */,
 				97A793D52385A7610015FE60 /* ContactsConfigurator.swift in Sources */,
 				97A793D7238692E90015FE60 /* ContactsRouter.swift in Sources */,
