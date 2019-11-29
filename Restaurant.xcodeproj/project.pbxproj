@@ -20,6 +20,9 @@
 		977DB98823916E4F007FF1A2 /* resource.json in Resources */ = {isa = PBXBuildFile; fileRef = 977DB98723916E4F007FF1A2 /* resource.json */; };
 		977DB98A23916E92007FF1A2 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98923916E92007FF1A2 /* LocalService.swift */; };
 		977DB98C23916EE8007FF1A2 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98B23916EE8007FF1A2 /* MenuModel.swift */; };
+		977DB98E2391A130007FF1A2 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98D2391A130007FF1A2 /* AuthButton.swift */; };
+		977DB9902391BB2C007FF1A2 /* AuthLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB98F2391BB2C007FF1A2 /* AuthLabel.swift */; };
+		977DB9922391BE61007FF1A2 /* AuthImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB9912391BE61007FF1A2 /* AuthImage.swift */; };
 		978988FC2379AAB900C384FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978988FB2379AAB900C384FC /* MainViewController.swift */; };
 		978988FF2379AAD400C384FC /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978988FE2379AAD400C384FC /* MainViewController.storyboard */; };
 		978989032379FA7200C384FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 978989022379FA7200C384FC /* GoogleService-Info.plist */; };
@@ -52,6 +55,9 @@
 		977DB98723916E4F007FF1A2 /* resource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resource.json; sourceTree = "<group>"; };
 		977DB98923916E92007FF1A2 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		977DB98B23916EE8007FF1A2 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		977DB98D2391A130007FF1A2 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		977DB98F2391BB2C007FF1A2 /* AuthLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLabel.swift; sourceTree = "<group>"; };
+		977DB9912391BE61007FF1A2 /* AuthImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthImage.swift; sourceTree = "<group>"; };
 		978988FB2379AAB900C384FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		978988FE2379AAD400C384FC /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		978989022379FA7200C384FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -122,16 +128,11 @@
 			children = (
 				970529F5237481190003C88D /* AppDelegate.swift */,
 				970529F7237481190003C88D /* SceneDelegate.swift */,
-				977DB98523915955007FF1A2 /* NetworkService.swift */,
-				977DB98923916E92007FF1A2 /* LocalService.swift */,
-				97A793C7238571700015FE60 /* Routers.swift */,
-				97898909237C85C200C384FC /* Auth */,
-				97898904237ACD4400C384FC /* Signin */,
-				978988E6237882AF00C384FC /* Login */,
+				977DB9932391BFA1007FF1A2 /* Start */,
 				978988FD2379AAC000C384FC /* Main */,
 				97A793F8238C30DE0015FE60 /* Menu */,
 				97A793CD23859A490015FE60 /* Contacts */,
-				9789890C237C8B0000C384FC /* Views */,
+				977DB9962391C0B4007FF1A2 /* Service */,
 				970529F9237481190003C88D /* ContentView.swift */,
 				970529FB2374811B0003C88D /* Assets.xcassets */,
 				97052A002374811B0003C88D /* LaunchScreen.storyboard */,
@@ -149,6 +150,43 @@
 				970529FE2374811B0003C88D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		977DB9932391BFA1007FF1A2 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				977DB9942391C08D007FF1A2 /* ViewControllers */,
+				9789890C237C8B0000C384FC /* Views */,
+				977DB9952391C09E007FF1A2 /* Router */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		977DB9942391C08D007FF1A2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				97898909237C85C200C384FC /* Auth */,
+				978988E6237882AF00C384FC /* Login */,
+				97898904237ACD4400C384FC /* Signin */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		977DB9952391C09E007FF1A2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				97A793C7238571700015FE60 /* Routers.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		977DB9962391C0B4007FF1A2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				977DB98523915955007FF1A2 /* NetworkService.swift */,
+				977DB98923916E92007FF1A2 /* LocalService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		978988E6237882AF00C384FC /* Login */ = {
@@ -189,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				9789890A237C8A5E00C384FC /* TextFieldView.swift */,
+				977DB98D2391A130007FF1A2 /* AuthButton.swift */,
+				977DB98F2391BB2C007FF1A2 /* AuthLabel.swift */,
+				977DB9912391BE61007FF1A2 /* AuthImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97052A0A237481430003C88D /* AuthViewController.swift in Sources */,
+				977DB98E2391A130007FF1A2 /* AuthButton.swift in Sources */,
 				975485DB23902699008F041C /* MenuCollectionViewController.swift in Sources */,
 				97A793D12385A73E0015FE60 /* ContactsPresenter.swift in Sources */,
 				97A793D32385A74C0015FE60 /* ContactsInteractor.swift in Sources */,
@@ -345,9 +387,11 @@
 				977DB98623915955007FF1A2 /* NetworkService.swift in Sources */,
 				970529F8237481190003C88D /* SceneDelegate.swift in Sources */,
 				975485DD239026FC008F041C /* MenuCollectionViewCell.swift in Sources */,
+				977DB9922391BE61007FF1A2 /* AuthImage.swift in Sources */,
 				97AF104023749B3E00223657 /* LoginViewController.swift in Sources */,
 				970529FA237481190003C88D /* ContentView.swift in Sources */,
 				978988FC2379AAB900C384FC /* MainViewController.swift in Sources */,
+				977DB9902391BB2C007FF1A2 /* AuthLabel.swift in Sources */,
 				97A793CC238599060015FE60 /* MainTabBarController.swift in Sources */,
 				977DB98C23916EE8007FF1A2 /* MenuModel.swift in Sources */,
 				97898906237ACD9D00C384FC /* SigninViewController.swift in Sources */,

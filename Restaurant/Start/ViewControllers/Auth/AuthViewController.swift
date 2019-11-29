@@ -15,34 +15,20 @@ class AuthViewController: UIViewController {
     
     private var router: RouterProtocol!
     
-    fileprivate lazy var loginButton: UIButton = {
-        let b = UIButton()
-        b.setTitle("Вход", for: .normal)
-        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28)
-        b.setTitleColor(.white, for: .normal)
-        b.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
-        b.backgroundColor = #colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1)
-        b.layer.cornerRadius = self.view.frame.width / 10
-        b.clipsToBounds = true
+    fileprivate lazy var loginButton: AuthButton = {
+        let b = AuthButton(title: "Вход", view: self.view)
+        b.addTarget(self, action: Selector.didTapLoginButton, for: .touchUpInside)
         return b
     }()
     
-    fileprivate lazy var signupButton: UIButton = {
-        let b = UIButton()
-        b.setTitle("Регистрация", for: .normal)
-        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28)
-        b.setTitleColor(.black, for: .normal)
-        b.addTarget(self, action: #selector(didTapSignupButton), for: .touchUpInside)
-        b.backgroundColor = .white
-        b.layer.cornerRadius = self.view.frame.width / 10
-        b.clipsToBounds = true
+    fileprivate lazy var signupButton: AuthButton = {
+        let b = AuthButton(title: "Регистрация", view: self.view, bgColor: .white)
+        b.addTarget(self, action: Selector.didTapSignupButton, for: .touchUpInside)
         return b
     }()
     
-    fileprivate let imageView: UIImageView = {
-        let iv = UIImageView(frame: .zero)
-        iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "base")
+    fileprivate let imageView: AuthImage = {
+        let iv = AuthImage(imageName: "base")
         return iv
     }()
     //MARK: - Cycle life
@@ -110,22 +96,9 @@ class AuthViewController: UIViewController {
         }
     }
 }
-
-//MARK: - Canvas
-import SwiftUI
-
-struct AuthPreviews: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<AuthPreviews.ContainerView>) -> UIViewController {
-            return AuthViewController()
-        }
-        
-        func updateUIViewController(_ uiViewController: AuthPreviews.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<AuthPreviews.ContainerView>) {
-        }
-    }
+//MARK: - Selector
+fileprivate extension Selector {
+    static let didTapLoginButton = #selector(AuthViewController.didTapLoginButton)
+    static let didTapSignupButton = #selector(AuthViewController.didTapSignupButton)
 }
+

@@ -14,61 +14,44 @@ class LoginViewController: UIViewController {
     //MARK: - Variables
     var router: RouterProtocol!
     
-    fileprivate let imageView: UIImageView = {
-        let iv = UIImageView(frame: .zero)
-        iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "log")
+    fileprivate let imageView: AuthImage = {
+        let iv = AuthImage(imageName: "log")
         return iv
     }()
     
-    fileprivate lazy var loginButton: UIButton = {
-        let b = UIButton()
-        b.setTitle("Вход", for: .normal)
-        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28)
-        b.setTitleColor(.white, for: .normal)
+    fileprivate lazy var loginButton: AuthButton = {
+        let b = AuthButton(title: "Вход", view: self.view)
         b.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
-        b.backgroundColor = #colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1)
-        b.clipsToBounds = true
-        b.layer.cornerRadius = self.view.frame.width / 10
         return b
     }()
     //FIXME: - Bug
     //BUG: placeholder don't displayed in iphone 11
     fileprivate lazy var emailView: TextFieldView = {
-        let v = TextFieldView()
-        v.textField.placeholder = "Email"
+        let v = TextFieldView(view: self.view,
+                              placeholder: "Email",
+                              isSecureTextEntry: false,
+                              imageName: "email")
         v.textField.delegate = self
-        v.imageView.image = UIImage(named: "email")
-        v.layer.cornerRadius = self.view.frame.width / 12
         return v
     }()
     
     fileprivate lazy var passwordView: TextFieldView = {
-        let v = TextFieldView()
-        v.textField.placeholder = "Password"
-        v.textField.isSecureTextEntry = true
+        let v = TextFieldView(view: self.view,
+                              placeholder: "Password",
+                              isSecureTextEntry: true,
+                              imageName: "password")
         v.textField.delegate = self
-        v.imageView.image = UIImage(named: "password")
-        v.layer.cornerRadius = self.view.frame.width / 12
         return v
     }()
     
-    fileprivate let signinLabel: UILabel = {
-        let l = UILabel()
-        l.text = "Нет аккаунта?"
-        l.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
-        l.textAlignment = .center
-        l.textColor = .white
+    fileprivate let signinLabel: AuthLabel = {
+        let l = AuthLabel(text: "Нет аккаунта?")
         return l
     }()
     
-    fileprivate lazy var signinButton: UIButton = {
-        let b = UIButton()
-        b.setTitle("Зарегистрироваться", for: .normal)
-        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
-        b.setTitleColor(#colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1), for: .normal)
+    fileprivate lazy var signinButton: AuthButton = {
+        let b = AuthButton(title: "Зарегистрироваться", view: self.view, strColor: #colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1))
         b.addTarget(self, action: #selector(didTapSigninButton), for: .touchUpInside)
-        b.backgroundColor = .clear
         return b
     }()
     
@@ -94,10 +77,12 @@ class LoginViewController: UIViewController {
     @objc func didTapLoginButton() {
         guard let email = emailView.textField.text,
             let password = passwordView.textField.text,
-            email != "", password != "" else { print("Error in enter" ); return }
+            email != "", password != ""
+            else { print("Error in enter" ); return }
+        
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
-                print("Error")
+                print("Error signin")
             }
             
             if user != nil {
@@ -178,25 +163,5 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-}
-
-//MARK: - Canvas
-import SwiftUI
-
-struct LoginPreviews: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<LoginPreviews.ContainerView>) -> UIViewController {
-            return LoginViewController()
-        }
-        
-        func updateUIViewController(_ uiViewController: LoginPreviews.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<LoginPreviews.ContainerView>) {
-            
-        }
     }
 }

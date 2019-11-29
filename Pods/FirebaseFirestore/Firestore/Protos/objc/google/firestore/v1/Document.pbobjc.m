@@ -30,8 +30,8 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/Struct.pbobjc.h>
- #import <Protobuf/Timestamp.pbobjc.h>
+#import <Protobuf/Struct.pbobjc.h>
+#import <Protobuf/Timestamp.pbobjc.h>
 #else
  #import "Struct.pbobjc.h"
  #import "Timestamp.pbobjc.h"

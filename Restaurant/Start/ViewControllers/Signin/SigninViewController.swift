@@ -28,71 +28,53 @@ class SigninViewController: UIViewController {
         return v
     }()
     
-    fileprivate let imageView: UIImageView = {
-        let iv = UIImageView(frame: .zero)
-        iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "log")
+    fileprivate let imageView: AuthImage = {
+        let iv = AuthImage(imageName: "log")
         return iv
     }()
     
-    fileprivate lazy var signinButton: UIButton = {
-        let b = UIButton()
-        b.setTitle("Зарегистрироваться", for: .normal)
-        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28)
-        b.setTitleColor(.white, for: .normal)
+    fileprivate lazy var signinButton: AuthButton = {
+        let b = AuthButton(title: "Зарегистрироваться", view: self.view)
         b.addTarget(self, action: #selector(didTapSigninButton), for: .touchUpInside)
-        b.backgroundColor = #colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1)
-        b.clipsToBounds = true
-        b.layer.cornerRadius = self.view.frame.width / 10
         return b
     }()
     //FIXME: - Bug
     //BUG: placeholder don't displayed in iphone 11
     fileprivate lazy var emailView: TextFieldView = {
-        let v = TextFieldView()
-        v.textField.placeholder = "Email"
+        let v = TextFieldView(view: self.view,
+                              placeholder: "Email",
+                              isSecureTextEntry: false,
+                              imageName: "email")
         v.textField.delegate = self
-        v.imageView.image = UIImage(named: "email")
-        v.layer.cornerRadius = self.view.frame.width / 12
         return v
     }()
     
     fileprivate lazy var passwordView: TextFieldView = {
-        let v = TextFieldView()
-        v.textField.placeholder = "Password"
-        v.textField.isSecureTextEntry = true
+        let v = TextFieldView(view: self.view,
+                              placeholder: "Password",
+                              isSecureTextEntry: true,
+                              imageName: "password")
         v.textField.delegate = self
-        v.imageView.image = UIImage(named: "password")
-        v.layer.cornerRadius = self.view.frame.width / 12
         return v
     }()
     
     fileprivate lazy var confirmPasswordView: TextFieldView = {
-        let v = TextFieldView()
-        v.textField.placeholder = "Confirm password"
-        v.textField.isSecureTextEntry = true
+        let v = TextFieldView(view: self.view,
+                              placeholder: "Confirm password",
+                              isSecureTextEntry: true,
+                              imageName: "ConfirmPassword")
         v.textField.delegate = self
-        v.imageView.image = UIImage(named: "ConfirmPassword")
-        v.layer.cornerRadius = self.view.frame.width / 12
         return v
     }()
     
-    fileprivate let loginLabel: UILabel = {
-        let l = UILabel()
-        l.text = "Уже зарегистированы?"
-        l.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
-        l.textAlignment = .center
-        l.textColor = .white
+    fileprivate let loginLabel: AuthLabel = {
+        let l = AuthLabel(text: "Уже зарегистированы?")
         return l
     }()
     
-    fileprivate lazy var loginButton: UIButton = {
-        let b = UIButton()
-        b.setTitle("Войти", for: .normal)
-        b.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
-        b.setTitleColor(#colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1), for: .normal)
+    fileprivate lazy var loginButton: AuthButton = {
+        let b = AuthButton(title: "Войти", view: self.view, strColor: #colorLiteral(red: 0.03141137213, green: 0.8178852201, blue: 0.902800858, alpha: 1))
         b.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
-        b.backgroundColor = .clear
         return b
     }()
     
@@ -129,7 +111,8 @@ class SigninViewController: UIViewController {
         guard let email = emailView.textField.text,
             let password = passwordView.textField.text,
             let confirmPassword = confirmPasswordView.textField.text,
-            email != "", password != "", confirmPassword != "" else { print("Error in enter" ); return }
+            email != "", password != "", confirmPassword != ""
+            else { print("Error in enter" ); return }
         
         if password == confirmPassword {
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -176,7 +159,7 @@ class SigninViewController: UIViewController {
         scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
-    //MARK: - Setuo
+    //MARK: - Setup
     fileprivate func setupImageView() {
         containerView.addSubview(imageView)
         imageView.snp.makeConstraints { (make) in
