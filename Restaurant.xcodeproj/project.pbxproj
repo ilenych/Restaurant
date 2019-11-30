@@ -36,6 +36,8 @@
 		97A793D52385A7610015FE60 /* ContactsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793D42385A7610015FE60 /* ContactsConfigurator.swift */; };
 		97A793D7238692E90015FE60 /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A793D6238692E90015FE60 /* ContactsRouter.swift */; };
 		97AF104023749B3E00223657 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF103F23749B3E00223657 /* LoginViewController.swift */; };
+		97CBCCD12392838500422442 /* DataFetherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CBCCD02392838500422442 /* DataFetherService.swift */; };
+		97CBCCD3239288CB00422442 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 97CBCCD2239288CB00422442 /* contacts.json */; };
 		B3928A8A79FB0A22C130C2C8 /* Pods_Restaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FB0D94966D017B1B6DA9C /* Pods_Restaurant.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		97A793D42385A7610015FE60 /* ContactsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsConfigurator.swift; sourceTree = "<group>"; };
 		97A793D6238692E90015FE60 /* ContactsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRouter.swift; sourceTree = "<group>"; };
 		97AF103F23749B3E00223657 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		97CBCCD02392838500422442 /* DataFetherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetherService.swift; sourceTree = "<group>"; };
+		97CBCCD2239288CB00422442 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
 		A952EF2CB55586A5C016BA75 /* Pods-Restaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurant.release.xcconfig"; path = "Target Support Files/Pods-Restaurant/Pods-Restaurant.release.xcconfig"; sourceTree = "<group>"; };
 		B57B5A7ADB182B7A24AAFCCA /* Pods-Restaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurant.debug.xcconfig"; path = "Target Support Files/Pods-Restaurant/Pods-Restaurant.debug.xcconfig"; sourceTree = "<group>"; };
 		E99FB0D94966D017B1B6DA9C /* Pods_Restaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Restaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,9 +138,9 @@
 				97A793CD23859A490015FE60 /* Contacts */,
 				977DB9962391C0B4007FF1A2 /* Service */,
 				970529F9237481190003C88D /* ContentView.swift */,
+				97CBCCD4239288D500422442 /* json */,
 				970529FB2374811B0003C88D /* Assets.xcassets */,
 				97052A002374811B0003C88D /* LaunchScreen.storyboard */,
-				977DB98723916E4F007FF1A2 /* resource.json */,
 				978989022379FA7200C384FC /* GoogleService-Info.plist */,
 				97052A032374811B0003C88D /* Info.plist */,
 				970529FD2374811B0003C88D /* Preview Content */,
@@ -185,6 +189,7 @@
 			children = (
 				977DB98523915955007FF1A2 /* NetworkService.swift */,
 				977DB98923916E92007FF1A2 /* LocalService.swift */,
+				97CBCCD02392838500422442 /* DataFetherService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -256,6 +261,15 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		97CBCCD4239288D500422442 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				97CBCCD2239288CB00422442 /* contacts.json */,
+				977DB98723916E4F007FF1A2 /* resource.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,6 +332,7 @@
 			files = (
 				978989032379FA7200C384FC /* GoogleService-Info.plist in Resources */,
 				97052A022374811B0003C88D /* LaunchScreen.storyboard in Resources */,
+				97CBCCD3239288CB00422442 /* contacts.json in Resources */,
 				970529FF2374811B0003C88D /* Preview Assets.xcassets in Resources */,
 				970529FC2374811B0003C88D /* Assets.xcassets in Resources */,
 				978988FF2379AAD400C384FC /* MainViewController.storyboard in Resources */,
@@ -377,6 +392,7 @@
 				97052A0A237481430003C88D /* AuthViewController.swift in Sources */,
 				977DB98E2391A130007FF1A2 /* AuthButton.swift in Sources */,
 				975485DB23902699008F041C /* MenuCollectionViewController.swift in Sources */,
+				97CBCCD12392838500422442 /* DataFetherService.swift in Sources */,
 				97A793D12385A73E0015FE60 /* ContactsPresenter.swift in Sources */,
 				97A793D32385A74C0015FE60 /* ContactsInteractor.swift in Sources */,
 				977DB98A23916E92007FF1A2 /* LocalService.swift in Sources */,

@@ -24,8 +24,7 @@ class LoginViewController: UIViewController {
         b.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         return b
     }()
-    //FIXME: - Bug
-    //BUG: placeholder don't displayed in iphone 11
+    
     fileprivate lazy var emailView: TextFieldView = {
         let v = TextFieldView(view: self.view,
                               placeholder: "Email",

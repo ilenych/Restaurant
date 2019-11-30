@@ -22,8 +22,10 @@ class MenuCollectionViewController: UICollectionViewController {
         activityIndicator.hidesWhenStopped = true
         
         //fetch local json
-        LocalService.fethData { (menu) in
-            self.menu = menu
+        DataFetherService.shared.fetchMenuPage { (menuModel) in
+            if let menu = menuModel?.menu {
+                self.menu = menu
+            }
         }
     }
     

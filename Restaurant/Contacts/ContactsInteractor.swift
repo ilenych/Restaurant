@@ -27,21 +27,14 @@ class ContactsInteractor {
 //MARK: - ContactsInteractorProtocol
 extension ContactsInteractor: ContactsInteractorProtocol {
     func provideContacts() {
-        // json manager in future here
-        let description = """
-Ресторан авторской кухни Любовь...
-
-"Любовь" - это богатое меню с блюдами из разных уголков мира, живая музыка по вечерам, ароматные паровые коктейли, сервис высокого уровня и уютная атмосфера.
-
-Расположился ресторан в самом сердце нашего прекрасного города Уфа.
-
-Из окон открывается вид на сквер Маяковского.
-"""
-        let contactsData = ContactsData(name: "Любовь...",
-                                        descriptionText: description,
-                                        location: "г.Уфа, Цюрупы 27")
-        presenter.recieveContacts(contactsData: contactsData)
-    }
-    
-    
+        DataFetherService.shared.fetchContacts { (contactsData) in
+            guard let name = contactsData?.name,
+                let description = contactsData?.description,
+                let location = contactsData?.location else {
+                    return
+            }
+            let contactsData = ContactsData(name: name, description: description, location: location)
+            self.presenter.recieveContacts(contactsData: contactsData)
+        }
+    }  
 }

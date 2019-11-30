@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Menu-->
         <scene sceneID="xzx-SP-B75">
             <objects>
                 <collectionViewController id="y5X-FR-XPz" customClass="MenuCollectionViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                             <outlet property="delegate" destination="y5X-FR-XPz" id="qMm-u1-ukv"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="XLd-He-u4V"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="book.fill" catalog="system" id="XLd-He-u4V"/>
                     <connections>
                         <outlet property="activityIndicator" destination="9y8-qi-94L" id="I9n-5H-cFo"/>
                     </connections>
@@ -254,6 +254,7 @@
     </scenes>
     <resources>
         <image name="Call" width="512" height="512"/>
+        <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="iconfinder_vkontakte_386743" width="64" height="64"/>
         <image name="instagram" width="512" height="512"/>
         <image name="log" width="1116" height="130"/>

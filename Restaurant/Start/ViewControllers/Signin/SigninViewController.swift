@@ -38,8 +38,7 @@ class SigninViewController: UIViewController {
         b.addTarget(self, action: #selector(didTapSigninButton), for: .touchUpInside)
         return b
     }()
-    //FIXME: - Bug
-    //BUG: placeholder don't displayed in iphone 11
+    
     fileprivate lazy var emailView: TextFieldView = {
         let v = TextFieldView(view: self.view,
                               placeholder: "Email",
