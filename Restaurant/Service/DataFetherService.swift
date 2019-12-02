@@ -2,7 +2,6 @@
 //  DataFetherService.swift
 //  Restaurant
 //
-//  Created by  SENAT on 30.11.2019.
 //  Copyright © 2019 <ASi. All rights reserved.
 //
 
