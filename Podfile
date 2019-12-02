@@ -12,5 +12,10 @@ target 'Restaurant' do
   pod 'SnapKit'
 
   pod 'Firebase/Auth'
+  pod 'FirebaseStorage'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Kingfisher'
 
 end

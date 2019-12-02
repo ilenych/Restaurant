@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ContactsData {
+struct ContactsData: Decodable {
     let name: String?
-    let descriptionText: String?
+    let description: String?
     let location: String?
 }
 
@@ -54,7 +54,7 @@ extension ContactsPresenter: ContactsPresenterProtocol {
 //MARK: - ContactsInteractorOutputProtocol
 extension ContactsPresenter: ContactsInteractorOutputProtocol {
     func recieveContacts(contactsData: ContactsData) {
-        guard let description = contactsData.descriptionText,
+        guard let description = contactsData.description,
         let name = contactsData.name,
         let location = contactsData.location else { return }
         view.setDescription(with: description)
